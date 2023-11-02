@@ -1,0 +1,9 @@
+.Controls
+{
+    display:flex;
+    flex: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
