@@ -1,22 +1,19 @@
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { useContext } from 'react'
 import { Link } from "react-router-dom"
 import { CartContext } from "../context/CartContext";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const Shop = () => {
-    const { cart, clearCart } = useContext(CartContext)
-    console.log({ cart })
+    const { cart, clearCart, removeItem, getTotalPay} = useContext(CartContext)
+    //console.log({ cart, getTotalPay })
 
-    const totalPay = cart.reduce(
-        (accumulator, currentValue) => accumulator + (currentValue.precio * currentValue.quantity),
-        0,
-    );
+    let totalPagar = getTotalPay()
 
     return (
         <div>
             <h1> Carrito de compras</h1>
-            <h2>Total a pagar: ${totalPay}.00</h2>
-
+            <h2>Total a pagar: ${totalPagar}.00</h2>
             {
                 cart.map(product => {
                     return (
@@ -24,6 +21,9 @@ const Shop = () => {
                             <div>Producto: {product.titulo}</div>
                             <div>Cantidad: {product.quantity}</div>
                             <div>Precio por unidad: ${product.precio}</div>
+                            <IconButton onClick={() => removeItem(product.id)}>
+                            <DeleteOutlineIcon />
+                            </IconButton>
                         </div>
 
                     )

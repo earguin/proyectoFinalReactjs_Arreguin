@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // Firestore
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/firebaseConfig'
+//import PacmanLoader  from "react-spinners/PacmanLoader ";
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);

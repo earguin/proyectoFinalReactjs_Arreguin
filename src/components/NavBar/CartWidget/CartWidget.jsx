@@ -6,12 +6,10 @@ import { useContext } from 'react'
 
 
 const CartWidget = () => {
-    const { cart } = useContext(CartContext)
+    const { getTotalProducts } = useContext(CartContext)
 
-    const numberProducts = cart.reduce(
-        (accumulator, currentValue) => accumulator + currentValue.quantity,
-        0,
-    );
+    let numberProducts = getTotalProducts()
+    
     //console.log(numberProducts);
 
     //console.log('contexto', {cart})

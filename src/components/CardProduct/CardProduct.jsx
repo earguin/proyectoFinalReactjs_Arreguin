@@ -6,13 +6,13 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../../context/CartContext'
 import { useState, useContext } from 'react'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const CardProduct = ({ product }) => {
     const [quantityAdded, setQuantityAdded] = useState(0)
 
     const { addItem } = useContext(CartContext)
-    //console.log(addItem)
 
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
@@ -26,6 +26,14 @@ const CardProduct = ({ product }) => {
         }
 
         addItem(item, quantity)
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Producto agregado al carrito',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     return (
@@ -50,12 +58,16 @@ const CardProduct = ({ product }) => {
             </CardActionArea>
             <CardActions>
                 {
-                    quantityAdded > 0 ? (
+                    quantityAdded > 0 ? 
+                    (
                         <Link to='/shop' >Terminar compra</Link>
-                    ): (
+                    ) : 
+                    ( 
+
                         <ItemCount initial={1} stock={product.stock} onAdd={handleOnAdd} />
                     )
-                }        
+                    
+                }
             </CardActions>
         </Card>
     );
