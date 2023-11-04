@@ -1,6 +1,8 @@
 import { useState } from "react"
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import Button from '@mui/material/Button';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './ItemCount.css'
 
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -21,14 +23,14 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <div className="ItemCount">
             <div className="Controls">
-                <button className="Button" onClick={decrement}><ArrowCircleDownIcon /></button>
+                <Button variant="outlined" onClick={decrement}><ArrowCircleDownIcon /></Button>
                 <h5 className="Number">{quantity}</h5>
-                <button className="Button" onClick={increment}><ArrowCircleUpIcon /></button>
+                <Button variant="outlined" onClick={increment}><ArrowCircleUpIcon /></Button>
             </div>
-            <div>
-                <button className="Button" onClick={() => onAdd(quantity)} disabled={!stock}>
+            <div className="btnAddCart">
+                <Button  variant="contained" startIcon={<AddShoppingCartIcon />} onClick={() => onAdd(quantity)} disabled={!stock}>
                     Agregar al carrito
-                </button>
+                </Button>
             </div>
         </div>
     )

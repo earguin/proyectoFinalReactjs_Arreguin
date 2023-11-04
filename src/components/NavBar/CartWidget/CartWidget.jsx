@@ -1,6 +1,6 @@
 //carrito de compras
 import "./CartWidget.css"
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { CartContext } from '../../../context/CartContext'
 import { useContext } from 'react'
 
@@ -10,12 +10,9 @@ const CartWidget = () => {
 
     let numberProducts = getTotalProducts()
     
-    //console.log(numberProducts);
-
-    //console.log('contexto', {cart})
     return (
         <div className="cart">
-            {<ShoppingCartIcon />}
+            {<LocalMallOutlinedIcon />}
             <span>
                 {numberProducts}
             </span>

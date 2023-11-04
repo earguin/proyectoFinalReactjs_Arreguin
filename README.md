@@ -1,8 +1,10 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Acerca del proyecto
+Este es mi proyecto final del curso de React JS
+Trata de un e-commerce de materiales Monograficos (libros) y Hemerográficos (revistas, boletines, jornadas) de una editorial ficticia llamada XILITLA STORE
+## Alumna Arreguin
+### Dependencias utilizadas
+* **firebase** para la conexión y manipulacion de registros en la base de datos  
+* **react-router-dom** para implementar la navegación
+* **sweetalert2** para implementar mensajes para el usuario
+* **@mui/** para implementar componentes UI
+* **aos** para colocar animaciones en UI

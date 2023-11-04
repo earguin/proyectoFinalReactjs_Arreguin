@@ -1,0 +1,28 @@
+.Shop{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    margin-left: 15px;    
+    margin: auto;
+    width: 80%;
+}
+
+.itemShop{
+    height: 170px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;    
+    align-items: center;
+}
+
+.contTotalPagar{
+    width: 80%;
+    margin: auto;
+}
+
+.contTotalPagar h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

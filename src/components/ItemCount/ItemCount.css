@@ -3,7 +3,14 @@
     display:flex;
     flex: 100%;
     align-items: center;
-    justify-content: space-between;
-    
-    
+    gap: 20px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.btnAddCart{
+    color:aquamarine;
+    margin-top: 15px;    
+    margin-left: 20px;
 }
